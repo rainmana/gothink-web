@@ -1,0 +1,32 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+build:
+  dockerfile: Dockerfile
+
+startCommand:
+  type: sse
+  url: 
+    # URL pattern for SSE endpoint - will be replaced with actual deployment URL
+    pattern: "{DEPLOYMENT_URL}/sse"
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    properties:
+      sessionTimeout: 
+        type: number
+        default: 1800000
+        description: "Session timeout in milliseconds (default: 30 minutes)"
+      maxThoughtsPerSession:
+        type: number
+        default: 100
+        description: "Maximum thoughts per session (default: 100)"
+      mentalModelsPath:
+        type: string
+        description: "Path to directory containing custom mental models"
+      logLevel:
+        type: string
+        default: "info"
+        enum: ["debug", "info", "warn", "error"]
+        description: "Logging level"
+    description: "Configuration options for the GoThink MCP server"
+

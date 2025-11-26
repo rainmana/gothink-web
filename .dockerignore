@@ -1,0 +1,42 @@
+# Git files
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+docs/
+LICENSE
+CODE_OF_CONDUCT.md
+
+# Development files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Test files
+*_test.go
+**/*_test.go
+
+# Build artifacts
+gothink
+gothink-http
+gothink-mcp
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# IDE and editor files
+.DS_Store
+Thumbs.db
+
+# Scripts
+scripts/

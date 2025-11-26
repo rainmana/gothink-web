@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: gothink-mcp
+    env: docker
+    dockerfilePath: ./Dockerfile
+    region: oregon
+    plan: starter
+    healthCheckPath: /health
+    envVars:
+      - key: GOTHINK_LOG_LEVEL
+        value: info
+      - key: GOTHINK_HOST
+        value: 0.0.0.0
+      - key: GOTHINK_MAX_THOUGHTS_PER_SESSION
+        value: 100
+    autoDeploy: true
